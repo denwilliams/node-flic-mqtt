@@ -27,15 +27,15 @@ const buttonConnections: Array<FlicButton> = buttons.map(b => {
   return connection;
 });
 
-function callback(buttonConfig: { topic: string }, suffix: string) {
+function callback(buttonConfig: { id: string, topic: string }, suffix: string) {
   return () => {
-    emit(buttonConfig.topic + suffix);
+    emit(buttonConfig.topic + suffix, buttonConfig.id);
   };
 }
 
-function emit(topic) {
+function emit(topic: string, id: string) {
   if (!mqttConnected) return;
-  mqttClient.publish(topic, JSON.stringify({ timestamp: new Date() }));
+  mqttClient.publish(topic, JSON.stringify({ id, timestamp: new Date() }));
   logger.info('Publish: ' + topic);
 }
 
