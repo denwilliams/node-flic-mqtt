@@ -1,0 +1,22 @@
+{
+  "name": "flic-mqtt",
+  "description": "Publishes Flic button presses to MQTT",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": ""
+  },
+  "keywords": [
+    "flic",
+    "mqtt"
+  ],
+  "author": "Den Williams",
+  "license": "MIT",
+  "dependencies": {
+    "loke-config": "^2.0.1",
+    "mqtt": "^2.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^7.0.4"
+  }
+}

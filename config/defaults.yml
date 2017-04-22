@@ -1,0 +1,8 @@
+---
+
+flic:
+  host: localhost
+  port: 5551
+mqtt:
+  host: localhost
+buttons: []
