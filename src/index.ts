@@ -39,19 +39,19 @@ function emit(topic) {
   logger.info('Publish: ' + topic);
 }
 
-client.on('connect', function () {
+mqttClient.on('connect', function () {
   logger.info('MQTT connected');
   mqttConnected = true;
   // client.subscribe('presence')
   // client.publish('presence', 'Hello mqtt')
 });
 
-client.on('close', console.log);
-client.on('offline', console.log);
-// client.on('error', console.error);
-// client.on('message', console.log);
+mqttClient.on('close', console.log);
+mqttClient.on('offline', console.log);
+// mqttClient.on('error', console.error);
+// mqttClient.on('message', console.log);
  
-// client.on('message', function (topic, message) {
+// mqttClient.on('message', function (topic, message) {
 //   // message is Buffer 
 //   console.log(message.toString())
 //   client.end()
