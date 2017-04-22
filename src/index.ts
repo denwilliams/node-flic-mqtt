@@ -6,9 +6,9 @@ const logger = console;
 
 const config = require('loke-config').create('flicmqtt');
 
-const mqttUrl = 'mqtt://' + config.get('mqtt.host');
-logger.info('Connecting to broker ' + mqtt);
-const mqttClient  = mqtt.connect(mqttUrl);
+const mqttUri = 'mqtt://' + config.get('mqtt.host');
+logger.info('Connecting to broker ' + mqttUri);
+const mqttClient  = mqtt.connect(mqttUri);
 let mqttConnected = false;
 
 const client = new FlicClient();
