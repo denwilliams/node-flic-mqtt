@@ -14,9 +14,7 @@ client.on('error', (err) => {
   logger.warn(`Unable to connect to Flic daemon: ${err.message}`);
 });
 
-const buttons = [
-  { id: 'one', address: '', topic: 'homenet/button/one/input' }
-];
+const buttons = config.get('buttons');
 
 const buttonConnections: Array<FlicButton> = buttons.map(b => {
   const connection = client.getButton(b.id, b.address);
@@ -33,6 +31,7 @@ function callback(buttonConfig: { topic: string }, suffix: string) {
 }
 
 function emit(topic) {
+  if (!mqttConnected) return;
   mqttClient.publish(topic, JSON.stringify({ timestamp: new Date() }));
 }
 
