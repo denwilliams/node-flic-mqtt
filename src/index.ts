@@ -17,6 +17,7 @@ client.on('error', (err) => {
 const buttons = config.get('buttons');
 
 const buttonConnections: Array<FlicButton> = buttons.map(b => {
+  logger.info('Connecting to ' + b.address);
   const connection = client.getButton(b.id, b.address);
   connection.onClick(callback(b, '/click'));
   connection.onDoubleClick(callback(b, '/dblclick'));
@@ -33,9 +34,11 @@ function callback(buttonConfig: { topic: string }, suffix: string) {
 function emit(topic) {
   if (!mqttConnected) return;
   mqttClient.publish(topic, JSON.stringify({ timestamp: new Date() }));
+  logger.info('Publish: ' + topic);
 }
 
 client.on('connect', function () {
+  logger.info('MQTT connected');
   mqttConnected = true;
   // client.subscribe('presence')
   // client.publish('presence', 'Hello mqtt')
