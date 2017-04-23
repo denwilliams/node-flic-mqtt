@@ -7,7 +7,7 @@
     "test": ""
   },
   "bin": {
-    "tsc": "./bin/flic-mqtt"
+    "flic-mqtt": "./bin/flic-mqtt"
   },
   "keywords": [
     "flic",
