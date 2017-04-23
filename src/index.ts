@@ -1,10 +1,11 @@
 import * as mqtt from 'mqtt';
 import { FlicButton } from './button';
 import { FlicClient } from './client';
+import { join } from 'path';
 
 const logger = console;
 
-const config = require('loke-config').create('flicmqtt');
+const config = require('loke-config').create('flicmqtt', { appPath: join(__dirname, '/../') });
 
 const mqttUri = 'mqtt://' + config.get('mqtt.host');
 logger.info('Connecting to broker ' + mqttUri);
