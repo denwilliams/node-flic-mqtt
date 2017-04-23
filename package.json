@@ -1,8 +1,8 @@
 {
   "name": "flic-mqtt",
   "description": "Publishes Flic button presses to MQTT",
-  "version": "0.0.1",
-  "main": "lib/index.js",
+  "version": "1.0.0",
+  "main": "main.js",
   "scripts": {
     "test": ""
   },
@@ -18,5 +18,13 @@
   },
   "devDependencies": {
     "@types/node": "^7.0.4"
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/denwilliams/node-flic-mqtt.git"
+  },
+  "bugs": {
+    "url": "https://github.com/denwilliams/node-flic-mqtt/issues"
+  },
+  "homepage": "https://github.com/denwilliams/node-flic-mqtt#readme"
 }
