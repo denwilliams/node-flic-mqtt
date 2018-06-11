@@ -9,7 +9,14 @@ const config = require('loke-config').create('flicmqtt', { appPath: join(__dirna
 
 const mqttUri = 'mqtt://' + config.get('mqtt.host');
 logger.info('Connecting to broker ' + mqttUri);
-const mqttClient  = mqtt.connect(mqttUri);
+
+let options = {};
+if (config.get('mqtt.username') != null && config.get('mqtt.password') != null) {
+  logger.info('Using authentication for broker connection');
+  options = { username: config.get('mqtt.username'), password: config.get('mqtt.password') };
+}
+
+const mqttClient  = mqtt.connect(mqttUri, options);
 let mqttConnected = false;
 
 const client = new FlicClient();
