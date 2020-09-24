@@ -6,5 +6,5 @@
  * See the official protocol specification for more details.
  */
 
-export { FlicClient } from './client';
-export { FlicConnectionChannel } from './connection-channel';
+export { FlicClient } from "./client";
+export { FlicConnectionChannel } from "./connection-channel";

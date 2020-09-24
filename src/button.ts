@@ -1,4 +1,4 @@
-import { EventEmitter } from 'events';
+import { EventEmitter } from "events";
 
 export class FlicButton extends EventEmitter {
   constructor(private channelFactory: Function) {
@@ -7,20 +7,23 @@ export class FlicButton extends EventEmitter {
 
   updateChannel() {
     const channel = this.channelFactory();
-    channel.on('buttonSingleOrDoubleClickOrHold', (clickType, wasQueued, timeDiff) => {
-      // console.log(bdAddr + " " + clickType + " " + (wasQueued ? "wasQueued" : "notQueued") + " " + timeDiff + " seconds ago");
-      switch (clickType) {
-        case 'ButtonSingleClick':
-          this.emit('click');
-          break;
-        case 'ButtonDoubleClick':
-          this.emit('doubleclick');
-          break;
-        case 'ButtonHold':
-          this.emit('hold');
-          break;
+    channel.on(
+      "buttonSingleOrDoubleClickOrHold",
+      (clickType, wasQueued, timeDiff) => {
+        // console.log(bdAddr + " " + clickType + " " + (wasQueued ? "wasQueued" : "notQueued") + " " + timeDiff + " seconds ago");
+        switch (clickType) {
+          case "ButtonSingleClick":
+            this.emit("click");
+            break;
+          case "ButtonDoubleClick":
+            this.emit("doubleclick");
+            break;
+          case "ButtonHold":
+            this.emit("hold");
+            break;
+        }
       }
-    });
+    );
     // channel.on("buttonUpOrDown", function(clickType, wasQueued, timeDiff) {
     //   console.log(bdAddr + " " + clickType + " " + (wasQueued ? "wasQueued" : "notQueued") + " " + timeDiff + " seconds ago");
     // });
@@ -30,14 +33,14 @@ export class FlicButton extends EventEmitter {
   }
 
   onClick(cb: Function) {
-    this.on('click', cb);
+    this.on("click", cb);
   }
 
   onDoubleClick(cb: Function) {
-    this.on('doubleclick', cb);
+    this.on("doubleclick", cb);
   }
 
   onHold(cb: Function) {
-    this.on('hold', cb);
+    this.on("hold", cb);
   }
 }
