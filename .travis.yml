@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-- '4'
+  - "4"
 before_install:
-- rm -rf lib/
-- npm install
-- npm install -g typescript@2.2.2
-- tsc
+  - rm -rf lib/
+  - npm install
+  - npm install -g typescript@4.0.3
+  - tsc
 deploy:
   provider: npm
   email: work@denwilliams.net
