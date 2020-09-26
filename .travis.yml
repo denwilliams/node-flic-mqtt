@@ -1,11 +1,11 @@
 language: node_js
 node_js:
-  - "10"
+- '10'
 before_install:
-  - rm -rf lib/
-  - npm install
-  - npm install -g typescript@4.0.3
-  - tsc
+- rm -rf lib/
+- npm install
+- npm install -g typescript@4.0.3
+- tsc
 deploy:
   provider: npm
   email: work@denwilliams.net
@@ -13,4 +13,4 @@ deploy:
     tags: true
     repo: denwilliams/node-flic-mqtt
   api_key:
-    secure: asovUVhmmz099TsLR4bdcabHdKz8+xM6mVLLJrwaGkMPjWYpx+a1n+IOC+6TWYOzfQkKjoVuHPtip4zxRf3vP/wEb0KJcSAW3CzXnaP3NvCgTE3tll/GLglPCL2D3yQmVymX7cEhFhCPr73AJRFymhTT2VI+pf2adSGqBZkjakE8oNoT/56jMXFsmqYzfsKWafk0W9GUrkCiOoVdbGe8M3vtrr5cZo6aO8pbVOpvmgrLjD1be5ZXW981ZD94ijDYZVPpPKGlZ5syi3iutgL/zWTEqJOt/hbLJApI2evFAA9TvpDvwfiMj+lc7oKhO77UfmZ45G6r70dm6Fmurrkg6rnad2ZkHQ4PNEcZQQLNCPaTDCvoOq28FlCqVXRhWiIg8BId13AHjTVM93iEg5JJnd8omUrJRyLggiiKJE4QqdB8KiJQngMJ4KKKCqKm4BgAE9jLYOZocdGAgQIRhgafukjrbe0zbT2cwtg8ncE188w4YY9JxJ26AWlei/5tkHFronh6Q+uF/TIrMCN7D4/iGwIj8YZVFkuPGlZuuFmf5bZNVANqZE2GN7u4Ry5FlcuTwtpaiuPcmopGhURfcj9kb1a9VP4qrA6pD7GjY+d5lm1f7oMGJo+TowED8W5IrKqw+JVFb7nhRXAuyiR9E7LGPt9GORmYB2UfULvZ3jFZNnY=
+    secure: AgF7Q0p2blzl6TB1hT04yMtzdvXkcipPnta6im+vUx9t8HN5um8gf79bb9tfiTH67PQuSv8TViU7WFeBYIhYUuqy5/pWyimWFb8MiS42cJfcR6lfXmvkqKbs4JNC/A227+Bj7GEvuCiWDzXYEjTpfHFwYR5S/MeSaOxOncaTwmCR+eEY9ytg7uRgknK9GMAq9BFJK+haz1RfJ6X6wc5iV/cAgyn9g/hAUm+XbF1pqTcqiK1rcUmoRRryRLw/tSWpu4MikyOKNhq40oOStu2XQM8j0ltTGRuP//1DJKPZofaTFKAek7ja04vDdRvWpZAiNnGrZBBApU2FVMYkeV1mO2OgqtA8H7VqRlEDgXBWL4GxAuATRlD6g5GjbFb4JMf+a/sxT1MaEnZHNnzEOwkrKhAQeX/k3VCm43IR5uMy1oqOT0L8fkSz4qkKur4OceW72xIHtMAbVjq9gpV1oISFKZCgKIB7VAeYk5wqOpItT+a4+L8MJBZTp+tLFqKLhwoIVueuyFZXfAqA96SlC/XAI51aJJoI3SGPJzr2Z0NASVj6k2dr9t6sVxlrD9ylcCwVOuBgYcTCnfbQrUEIrEL95+ZQJo/HJYFKPdHmJl8mnslg6F1DjtV4udoMF2cekhb9TOg/ihXX0EWKWQD8uHnK+ZxH7thRTC4QCVjme/piuqE=
